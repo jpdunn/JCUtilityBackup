@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="au.edu.jcu.it.appframework"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="au.edu.jcu.it.appframework.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.LecturerActivity"
+            android:label="@string/title_activity_lecturer" >
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.StudentActivity"
+            android:label="@string/title_activity_student" >
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.TimeTableActivity"
+            android:label="@string/title_activity_time_table" >
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.RegisterActivity"
+            android:label="@string/title_activity_register" >
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.AddSubjectsActivity"
+            android:label="@string/title_activity_add_subjects" >
+        </activity>
+    </application>
+
+</manifest>
