@@ -1,22 +1,47 @@
 package au.edu.jcu.it.appframework;
 
-import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
-public class TimeTableActivity extends Activity {
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
+import android.view.Menu;
+import au.edu.jcu.it.appframework.model.DaysEnum;
+
+public class TimeTableActivity extends FragmentActivity {
+	
+	TimeTableFragmentAdapter pageAdapter;
+	List<Fragment> fList;
+	int USERID = 0; // TODO: Add actual users id
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_time_table);
+		
+		fList = new ArrayList<Fragment>();
+		
+		for(int eachDay = 0; eachDay < DaysEnum.values().length; eachDay ++){
+			fList.add(TimeTableFragment.newInstance(Integer.toString(eachDay)));
+		}
+		
+		final List<Fragment> fragments = fList;
+
+		pageAdapter = new TimeTableFragmentAdapter(getSupportFragmentManager(),
+				fragments);
+
+		final ViewPager pager = (ViewPager) findViewById(R.id.viewpager);
+		pager.setAdapter(pageAdapter);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.time_table, menu);
 		return true;
 	}
-
 }

@@ -1,5 +1,9 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    >
+    <TableLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,33 +13,39 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".AddSubjectsActivity" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="5"
-        android:orientation="vertical" >
+    <TableRow>
 
-        <ListView
-            android:id="@+id/listView1"
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Please select a subject" />
+    </TableRow>
+
+    <TableRow android:layout_width="match_parent" >
+
+        <AutoCompleteTextView
+            android:id="@+id/SubjectNameAutoComplete"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-        </ListView>
-    </LinearLayout>
+            android:layout_weight="28"
+            android:textSize="12sp"
+            android:layout_height="wrap_content"
+            android:ems="10" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical" >
+            <requestFocus />
+        </AutoCompleteTextView>
 
         <Button
             android:id="@+id/button1"
+            style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/title_activity_add_subjects"
-            android:onClick="addSubject" />
+            android:layout_weight="0.1"
+            android:text="+" 
+            android:onClick="addSubjectsSelected"/>
 
-    </LinearLayout>
-
-</LinearLayout>
+    </TableRow>
+    
+</TableLayout>
+</ScrollView>

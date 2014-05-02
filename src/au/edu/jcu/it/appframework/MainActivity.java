@@ -26,7 +26,6 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
@@ -55,7 +54,6 @@ public class MainActivity extends Activity {
 
 		} else if (usernameText.endsWith("@my.jcu.edu.au")
 				&& passwordText.equals("student")) {
-
 			Log.i(TAG, usernameText);
 			Log.i(TAG, passwordText);
 			Intent student = new Intent(this, StudentActivity.class);
@@ -71,10 +69,8 @@ public class MainActivity extends Activity {
 				Toast.makeText(getApplicationContext(), "Login disabled for 3 minutes",
 						   Toast.LENGTH_LONG).show();
 				
-				loginButton.setEnabled(false);
-				
+				loginButton.setEnabled(false);	
 			}
-			
 		}
 	}
 }

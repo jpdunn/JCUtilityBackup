@@ -25,7 +25,7 @@
             android:onClick="addSubjects" />
 
         <CheckedTextView
-            android:id="@+id/checkedTextView1"
+            android:id="@+id/EnrolledSubject1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checkMark="?android:attr/listChoiceIndicatorMultiple"
@@ -34,8 +34,8 @@
             android:text="@string/subject1" />
 
         <CheckedTextView
-            android:id="@+id/checkedTextView2"
-            android:layout_width="wrap_content"
+            android:id="@+id/EnrolledSubject2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checkMark="?android:attr/listChoiceIndicatorMultiple"
             android:checked="true"
@@ -43,7 +43,7 @@
             android:text="@string/subject2" />
 
         <CheckedTextView
-            android:id="@+id/checkedTextView3"
+            android:id="@+id/EnrolledSubject3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checkMark="?android:attr/listChoiceIndicatorMultiple"
@@ -52,7 +52,7 @@
             android:text="@string/subject3" />
 
         <CheckedTextView
-            android:id="@+id/checkedTextView4"
+            android:id="@+id/EnrolledSubject4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checkMark="?android:attr/listChoiceIndicatorMultiple"
@@ -67,6 +67,14 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="showTimeTable"
+            android:text="showTimeTable" />
+
     </LinearLayout>
 
     <LinearLayout
