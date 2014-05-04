@@ -46,11 +46,11 @@ public class RegisterActivity extends Activity {
 				|| emailText.endsWith("@jcu.edu.au")) {
 			Log.i(TAG, emailText);
 			Log.i(TAG, passwordText);
-			// Toast.makeText(getApplicationContext(), response,
-			// Toast.LENGTH_LONG).show();
+			 Toast.makeText(getApplicationContext(), "Email Sent",
+			 Toast.LENGTH_LONG).show();
 
 
-			// finish();
+			 finish();
 
 		} else {
 			Toast.makeText(getApplicationContext(), "Invalid Email address",

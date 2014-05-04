@@ -24,28 +24,34 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int EnrolledSubject1=0x7f08000e;
-        public static final int EnrolledSubject2=0x7f08000f;
-        public static final int EnrolledSubject3=0x7f080010;
-        public static final int EnrolledSubject4=0x7f080011;
+        public static final int EnrolledSubject0=0x7f08000f;
+        public static final int EnrolledSubject1=0x7f080000;
+        public static final int EnrolledSubject2=0x7f080014;
+        public static final int EnrolledSubject3=0x7f08000c;
         public static final int SubjectNameAutoComplete=0x7f080001;
-        public static final int action_settings=0x7f080015;
+        public static final int action_settings=0x7f08001b;
         public static final int addSubjects=0x7f080009;
         public static final int button1=0x7f080002;
-        public static final int dayDisplay=0x7f080014;
+        public static final int dayDisplay=0x7f08001a;
         public static final int emailField=0x7f08000b;
         public static final int instructions=0x7f08000d;
         public static final int loginButton=0x7f080008;
         public static final int password=0x7f080006;
         public static final int passwordField=0x7f080007;
-        public static final int tableRow1=0x7f080013;
-        public static final int textView1=0x7f080000;
+        public static final int removeSubject1=0x7f080010;
+        public static final int removeSubject2=0x7f080012;
+        public static final int removeSubject3=0x7f080015;
+        public static final int removeSubject4=0x7f080017;
+        public static final int subjectRow0=0x7f08000e;
+        public static final int subjectRow1=0x7f080011;
+        public static final int subjectRow2=0x7f080013;
+        public static final int subjectRow3=0x7f080016;
+        public static final int tableRow1=0x7f080019;
         public static final int textView2=0x7f08000a;
-        public static final int textView3=0x7f08000c;
         public static final int title=0x7f080003;
         public static final int username=0x7f080004;
         public static final int usernameField=0x7f080005;
-        public static final int viewpager=0x7f080012;
+        public static final int viewpager=0x7f080018;
     }
     public static final class layout {
         public static final int activity_add_subjects=0x7f030000;
