@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="fill"
     android:orientation="vertical" >
 
     <TableLayout
@@ -9,173 +10,211 @@
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:background="#ffffff"
-        android:stretchColumns="*" >
+        
+        android:background="#ffffff">
 
         <TableRow
-            android:id="@+id/tableRow1"
+            android:id="@+id/lecturedSubjectRow0"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
 
             <TextView
                 android:id="@+id/dayDisplay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="24dp"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/_9"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal" >
+
+            <TextView
+                android:id="@+id/colourSelectionTitle"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@android:color/holo_green_light"
+                android:text="9AM"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
-                android:id="@+id/dayDisplay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/_9Text"
+                android:layout_width="0dp"
+                android:layout_weight="4" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/_10"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal" >
+
+            <TextView
+                android:id="@+id/colourSelectionTitle"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@android:color/holo_green_light"
+                android:text="10AM"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal" >
-
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_span="3"
-                android:background="#b0b0b0"
-                android:gravity="center"
-                android:padding="18dip"
-                android:text="9am"
-                android:textColor="#000"
-                android:textSize="10dp" />
+                android:id="@+id/_10Text"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4" />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/_11"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
             android:gravity="center_horizontal" >
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_span="3"
-                android:background="#b0b0b0"
-                android:gravity="center"
-                android:padding="15dip"
-                android:text="10am"
-                android:textColor="#000"
-                android:textSize="10dp" />
+                android:id="@+id/colourSelectionTitle"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@android:color/holo_green_light"
+                android:text="11AM"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/_11Text"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4" />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/_12"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
             android:gravity="center_horizontal" >
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_span="3"
-                android:background="#b0b0b0"
-                android:gravity="center"
-                android:padding="15dip"
-                android:text="11am"
-                android:textColor="#000"
-                android:textSize="10dp" />
+                android:id="@+id/colourSelectionTitle"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@android:color/holo_green_light"
+                android:text="12PM"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/_12Text"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4" />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/_13"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
             android:gravity="center_horizontal" >
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_span="3"
-                android:background="#b0b0b0"
-                android:gravity="center"
-                android:padding="15dip"
-                android:text="12pm"
-                android:textColor="#000"
-                android:textSize="10dp" />
+                android:id="@+id/colourSelectionTitle"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@android:color/holo_green_light"
+                android:text="1PM"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/_13Text"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4" />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/_14"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
             android:gravity="center_horizontal" >
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_span="3"
-                android:background="#b0b0b0"
-                android:gravity="center"
-                android:padding="18dip"
-                android:text="1pm"
-                android:textColor="#000"
-                android:textSize="10dp" />
+                android:id="@+id/colourSelectionTitle"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@android:color/holo_green_light"
+                android:text="2PM"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/_14Text"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4" />
         </TableRow>
 
         <TableRow
+            android:id="@+id/_15"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
             android:gravity="center_horizontal" >
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_span="3"
-                android:background="#b0b0b0"
-                android:gravity="center"
-                android:padding="18dip"
-                android:text="2pm"
-                android:textColor="#000"
-                android:textSize="10dp" />
+                android:id="@+id/colourSelectionTitle"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@android:color/holo_green_light"
+                android:text="3PM"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/_15Text"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4" />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/_16"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
             android:gravity="center_horizontal" >
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_span="3"
-                android:background="#b0b0b0"
-                android:gravity="center"
-                android:padding="18dip"
-                android:text="3pm"
-                android:textColor="#000"
-                android:textSize="10dp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal" >
+                android:id="@+id/colourSelectionTitle"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@android:color/holo_green_light"
+                android:text="4PM"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_span="3"
-                android:background="#b0b0b0"
-                android:gravity="center"
-                android:padding="18dip"
-                android:text="4pm"
-                android:textColor="#000"
-                android:textSize="10dp" />
+                android:id="@+id/_16Text"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="4" />
+
         </TableRow>
     </TableLayout>
 

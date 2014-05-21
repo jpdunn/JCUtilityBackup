@@ -21,5 +21,19 @@
     <string name="subject3">Subject 3</string>
     <string name="subject4">Subject 4</string>
     <string name="title_activity_add_subjects">Add Subject</string>
+    <string name="title_activity_modify_subject_settings">ModifySubjectSettings</string>
+    <string name="title_activity_lecturer__timetable">Lecturer_Timetable</string>
+    <string name="title_activity_lecturer__manage__subjects">Lecturer_Manage_Subjects</string>
+    <string name="title_activity_show_enrolled_subjects">ShowEnrolledSubjectsActivity</string>
+    <string name="title_activity_create_quiz">CreateQuizActivity</string>
+    <string name="title_activity_view_current_quizes">ViewCurrentQuizesActivity</string>
+    <string name="title_activity_add_new_attendance">AddNewAttendance</string>
+    <string name="title_activity_student_attend_class">Attend Class</string>
+    <string name="title_atendancerecord_list">Atendance Records</string>
+    <string name="title_atendancerecord_detail">Atendance Record Detail</string>
+    <string name="title_attendance_list">attendances</string>
+    <string name="title_attendance_detail">attendance Detail</string>
+    <string name="title_activity_view_attendance">ViewAttendanceActivity</string>
+    <string name="title_activity_view_single_attendance">ViewSingleAttendanceActivity</string>
 
 </resources>

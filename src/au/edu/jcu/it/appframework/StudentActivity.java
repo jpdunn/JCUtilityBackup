@@ -10,7 +10,8 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.TableRow;
 import android.widget.TextView;
-import au.edu.jcu.it.appframework.model.DBPopulator;
+import au.edu.jcu.it.appframework.model.SaveSharedPreference;
+import au.edu.jcu.it.appframework.model.StudentDBPopulator;
 import au.edu.jcu.it.appframework.model.ServerCommFacade;
 import au.edu.jcu.it.appframework.model.StudentInfoDB;
 
@@ -18,6 +19,8 @@ public class StudentActivity extends Activity {
 
 	ServerCommFacade serverComm;
 	StudentInfoDB enrolledSubjects;
+	String subject;
+	TextView thisSubject;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +28,11 @@ public class StudentActivity extends Activity {
 		setContentView(R.layout.activity_student);
 		enrolledSubjects = new StudentInfoDB(this);
 		enrolledSubjects.open();
-		System.out.println(enrolledSubjects.getEnrolledSubjectsInfo()
-				.toString());
-
+		String email = SaveSharedPreference.getUserName(this);
+		String password = SaveSharedPreference.getPassword(this);
+		
+		enrolledSubjects.createEntryUser(email, password);
+		
 		if (StudentInfoDB.doesDBExist(this)) {
 			System.out.println("DB EXISTS");
 			if (enrolledSubjects.checkIfNotPopulated()) {
@@ -35,9 +40,8 @@ public class StudentActivity extends Activity {
 
 				String response = serverComm.getClasses();
 				String subjectResponse = serverComm.getSubjects();
-				System.out.println(response);
 
-				DBPopulator db = new DBPopulator(this);
+				StudentDBPopulator db = new StudentDBPopulator(this);
 				db.addSubjects(subjectResponse);
 				db.addClasses(response);
 			}
@@ -52,7 +56,7 @@ public class StudentActivity extends Activity {
 			String subjectResponse = serverComm.getSubjects();
 			System.out.println(response);
 
-			DBPopulator db = new DBPopulator(this);
+			StudentDBPopulator db = new StudentDBPopulator(this);
 			db.addSubjects(subjectResponse);
 			db.addClasses(response);
 			enrolledSubjects.close();
@@ -61,25 +65,25 @@ public class StudentActivity extends Activity {
 		populateSubjects();
 
 	}
-	
+
 	@Override
 	protected void onResume() {
-		
+
 		super.onResume();
 		populateSubjects();
 	}
-	
-	public void populateSubjects(){
+
+	public void populateSubjects() {
+		enrolledSubjects.open();
 		ArrayList<Map> eachSubject = enrolledSubjects.getEnrolledSubjectsInfo();
 		if (eachSubject != null) {
 
 			for (int i = 0; i < eachSubject.size(); i++) {
-				
+
 				int id = getResources().getIdentifier("EnrolledSubject" + i,
 						"id", this.getPackageName());
 				TextView eachTextView = (TextView) findViewById(id);
-				eachTextView.setText((CharSequence) eachSubject.get(i).get(
-						"Subject Code") + " " + eachSubject.get(i).get("Subject Name"));
+				eachTextView.setText((CharSequence) eachSubject.get(i).get("Subject_Code") + ": " + eachSubject.get(i).get("Subject_Name"));
 
 				int rowID = getResources().getIdentifier("subjectRow" + i,
 						"id", this.getPackageName());
@@ -87,26 +91,46 @@ public class StudentActivity extends Activity {
 				eachTableRow.setVisibility(View.VISIBLE);
 			}
 		}
+		enrolledSubjects.close();
 	}
 
 	public void removeSubject(View view) {
 
 		switch (view.getId()) {
 		case R.id.removeSubject1:
-			System.out.println("subject 1");
 			TableRow subject1 = (TableRow) findViewById(R.id.subjectRow0);
+			thisSubject = (TextView) findViewById(R.id.EnrolledSubject0);
+			subject = (String) thisSubject.getText();
+			subject = subject.split(":")[0];
+			enrolledSubjects.deleteUser(subject);
+			System.out.println(subject + "Has been deleted");
 			subject1.setVisibility(View.GONE);
 			break;
 		case R.id.removeSubject2:
 			TableRow subject2 = (TableRow) findViewById(R.id.subjectRow1);
+			thisSubject = (TextView) findViewById(R.id.EnrolledSubject1);
+			subject = (String) thisSubject.getText();
+			subject = subject.split(":")[0];
+			enrolledSubjects.deleteUser(subject);
+			System.out.println(subject + "Has been deleted");
 			subject2.setVisibility(View.GONE);
 			break;
 		case R.id.removeSubject3:
 			TableRow subject3 = (TableRow) findViewById(R.id.subjectRow2);
+			thisSubject = (TextView) findViewById(R.id.EnrolledSubject2);
+			subject = (String) thisSubject.getText();
+			subject = subject.split(":")[0];
+			enrolledSubjects.deleteUser(subject);
+			System.out.println(subject + "Has been deleted");
 			subject3.setVisibility(View.GONE);
 			break;
 		case R.id.removeSubject4:
 			TableRow subject4 = (TableRow) findViewById(R.id.subjectRow3);
+			thisSubject = (TextView) findViewById(R.id.EnrolledSubject3);
+			subject = (String) thisSubject.getText();
+			subject = subject.split(":")[0];
+			enrolledSubjects.deleteUser(subject);
+			System.out.println(subject + "Has been deleted");
 			subject4.setVisibility(View.GONE);
 			break;
 		}
@@ -120,7 +144,7 @@ public class StudentActivity extends Activity {
 	}
 
 	public void showTimeTable(View view) {
-		Intent timetable = new Intent(this, TimeTableActivity.class);
+		Intent timetable = new Intent(this, StudentTimeTableActivity.class);
 		startActivity(timetable);
 	}
 
@@ -128,5 +152,44 @@ public class StudentActivity extends Activity {
 		Intent addSubjects = new Intent(this, AddSubjectsActivity.class);
 		startActivity(addSubjects);
 	}
+	
+	public void modifySubject(View view){
+		TextView selectedSubjectView = null;
 
+		switch (view.getId()) {
+		case R.id.modifySubject1:
+			selectedSubjectView = (TextView) findViewById(R.id.EnrolledSubject0);
+			break;
+		case R.id.modifySubject2:
+			selectedSubjectView = (TextView) findViewById(R.id.EnrolledSubject1);
+			break;
+		case R.id.modifySubject3:
+			selectedSubjectView = (TextView) findViewById(R.id.EnrolledSubject2);
+			break;
+		case R.id.modifySubject4:
+			selectedSubjectView = (TextView) findViewById(R.id.EnrolledSubject3);
+			break;
+		}
+
+		String subjectString = (String) (selectedSubjectView.getText());
+		
+		Intent intent = new Intent();
+		intent.setClass(this, ModifySubjectSettings.class);
+		
+		intent.putExtra("SUBJECT_CODE",subjectString.split(":")[0] );
+		startActivity(intent);
+	}
+
+	
+	public void attendClass(View view){
+		Intent intent = new Intent();
+		intent.setClass(this, StudentAttendClass.class);
+		startActivity(intent);
+	}
+	
+	public void Logout(View view){
+		SaveSharedPreference.logout(this);
+		finish();
+	}
+	
 }

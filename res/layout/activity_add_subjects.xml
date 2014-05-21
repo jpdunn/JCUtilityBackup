@@ -1,51 +1,51 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    >
-    <TableLayout 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".AddSubjectsActivity" >
+    android:background="@drawable/gradientbg" >
 
-    <TableRow>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".AddSubjectsActivity" >
 
-        <TextView
-            android:id="@+id/EnrolledSubject1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Please select a subject" />
-    </TableRow>
+        <TableRow>
 
-    <TableRow android:layout_width="match_parent" >
+            <TextView
+                android:id="@+id/EnrolledSubject1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Please select a subject" />
+        </TableRow>
 
-        <AutoCompleteTextView
-            android:id="@+id/SubjectNameAutoComplete"
-            android:layout_width="match_parent"
-            android:layout_weight="28"
-            android:textSize="12sp"
-            android:layout_height="wrap_content"
-            android:ems="10" >
+        <TableRow android:layout_width="match_parent" >
 
-            <requestFocus />
-        </AutoCompleteTextView>
+            <AutoCompleteTextView
+                android:id="@+id/SubjectNameAutoComplete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="28"
+                android:ems="10"
+                android:textSize="12sp" >
 
-        <Button
-            android:id="@+id/button1"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.1"
-            android:text="+" 
-            android:onClick="addSubjectsSelected"/>
+                <requestFocus />
+            </AutoCompleteTextView>
 
-    </TableRow>
-    
-</TableLayout>
+            <Button
+                android:id="@+id/manageSubject_0"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:onClick="addSubjectsSelected"
+                android:text="+" />
+        </TableRow>
+    </TableLayout>
+
 </ScrollView>

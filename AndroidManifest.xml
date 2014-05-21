@@ -5,8 +5,10 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="14"
         android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -31,7 +33,7 @@
             android:label="@string/title_activity_student" >
         </activity>
         <activity
-            android:name="au.edu.jcu.it.appframework.TimeTableActivity"
+            android:name="au.edu.jcu.it.appframework.StudentTimeTableActivity"
             android:label="@string/title_activity_time_table" >
         </activity>
         <activity
@@ -41,6 +43,70 @@
         <activity
             android:name="au.edu.jcu.it.appframework.AddSubjectsActivity"
             android:label="@string/title_activity_add_subjects" >
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.ModifySubjectSettings"
+            android:label="@string/title_activity_modify_subject_settings" >
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.Lecturer_Timetable"
+            android:label="@string/title_activity_lecturer__timetable" >
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.Lecturer_Manage_Subjects"
+            android:label="@string/title_activity_lecturer__manage__subjects" >
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.ShowEnrolledStudentsActivity"
+            android:label="@string/title_activity_show_enrolled_subjects" >
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.CreateQuizActivity"
+            android:label="@string/title_activity_create_quiz" >
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.ViewCurrentQuizesActivity"
+            android:label="@string/title_activity_view_current_quizes" >
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.AddNewAttendance"
+            android:label="@string/title_activity_add_new_attendance" >
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.StudentAttendClass"
+            android:label="@string/title_activity_student_attend_class" >
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.AtendanceRecordListActivity"
+            android:label="@string/title_atendancerecord_list" >
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.AtendanceRecordDetailActivity"
+            android:label="@string/title_atendancerecord_detail"
+            android:parentActivityName=".AtendanceRecordListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AtendanceRecordListActivity" />
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.attendanceListActivity"
+            android:label="@string/title_attendance_list" >
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.attendanceDetailActivity"
+            android:label="@string/title_attendance_detail"
+            android:parentActivityName=".attendanceListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".attendanceListActivity" />
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.ViewAttendanceActivity"
+            android:label="@string/title_activity_view_attendance" >
+        </activity>
+        <activity
+            android:name="au.edu.jcu.it.appframework.ViewSingleAttendanceActivity"
+            android:label="@string/title_activity_view_single_attendance" >
         </activity>
     </application>
 

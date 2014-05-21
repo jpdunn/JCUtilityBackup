@@ -1,35 +1,31 @@
 package au.edu.jcu.it.appframework;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.view.Menu;
 import au.edu.jcu.it.appframework.model.DaysEnum;
+import au.edu.jcu.it.appframework.model.LoginType;
 
-public class TimeTableActivity extends FragmentActivity {
+public class Lecturer_Timetable extends FragmentActivity {
 	
 	TimeTableFragmentAdapter pageAdapter;
 	List<Fragment> fList;
-	int USERID = 0; // TODO: Add actual users id
-
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_time_table);
-		
+		setContentView(R.layout.activity_lecturer__timetable);
+
 		fList = new ArrayList<Fragment>();
-		
-		for(int eachDay = 0; eachDay < DaysEnum.values().length; eachDay ++){
-			fList.add(TimeTableFragment.newInstance(Integer.toString(eachDay)));
+
+		for (int eachDay = 0; eachDay < DaysEnum.values().length; eachDay++) {
+			fList.add(TimeTableFragment.newInstance(Integer.toString(eachDay), LoginType.Lecturer));
 		}
-		
+
 		final List<Fragment> fragments = fList;
 
 		pageAdapter = new TimeTableFragmentAdapter(getSupportFragmentManager(),
@@ -37,11 +33,5 @@ public class TimeTableActivity extends FragmentActivity {
 
 		final ViewPager pager = (ViewPager) findViewById(R.id.viewpager);
 		pager.setAdapter(pageAdapter);
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.time_table, menu);
-		return true;
 	}
 }

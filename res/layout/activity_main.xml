@@ -6,15 +6,24 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/bg8bit"
     tools:context=".MainActivity" >
 
-    <TextView
-        android:id="@+id/title"
+    <TableRow
+        android:id="@+id/tableRow1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/title"
-        android:textSize="50sp" />
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:textColor="#FFFFFF"
+            android:textSize="50sp" />
+
+    </TableRow>
     
     <TableRow>
 
@@ -22,12 +31,15 @@
             android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/username" />
+            android:layout_weight="1"
+            android:text="@string/username"
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/usernameField"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
             android:ems="10" >
 
             <requestFocus />
@@ -40,17 +52,21 @@
             android:id="@+id/password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/password" />
+            android:layout_weight="1"
+            android:text="@string/password"
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/passwordField"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
             android:ems="10"
             android:inputType="textPassword" />
         
     </TableRow>
-    <TableRow>
+
+    <TableRow android:layout_weight="1" >
 
         <Button
             android:id="@+id/loginButton"
@@ -58,10 +74,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="Login"
+            android:layout_gravity="bottom"
+            android:textColor="#FFFFFF"
             android:text="@string/login" />
         
     </TableRow>
-    <TableRow>
+
+    <TableRow android:layout_weight="2" >
 
         <Button
             android:id="@+id/addSubjects"
@@ -69,7 +88,9 @@
             android:layout_height="wrap_content"
             android:text="@string/register"
             android:layout_weight="1"
+            android:textColor="#FFFFFF"
             android:onClick="register" />
         
     </TableRow>
+
 </TableLayout>

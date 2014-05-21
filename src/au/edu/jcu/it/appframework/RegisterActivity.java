@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-import au.edu.jcu.it.appframework.model.DBPopulator;
+import au.edu.jcu.it.appframework.model.StudentDBPopulator;
 import au.edu.jcu.it.appframework.model.ServerCommFacade;
 import au.edu.jcu.it.appframework.model.ServerCommunication;
 import au.edu.jcu.it.appframework.model.StudentInfoDB;

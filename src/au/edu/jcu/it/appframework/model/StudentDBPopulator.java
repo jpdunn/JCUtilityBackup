@@ -5,17 +5,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
-import android.view.View;
 
-public class DBPopulator {
+public class StudentDBPopulator {
 
 	Context context;
 	String subjectCodeString, subjectNameString, xmlRefString, subjectIDString, 
 	subjectStartTimeString, subjectEndTimeString, subjectDayString, subjectCategoryString,
-	subjectRoomString;
+	subjectRoomString, rawStartString, rawEndString, repeatString;
 
-	public DBPopulator(Context context) {
-		// TODO Auto-generated constructor stub
+	public StudentDBPopulator(Context context) {
 		this.context = context;
 	}
 
@@ -66,10 +64,14 @@ public class DBPopulator {
 				subjectDayString = subjectCode.getString("Day");
 				subjectCategoryString = subjectCode.getString("Category");
 				subjectRoomString = subjectCode.getString("Lecture_Room");
+				rawStartString = subjectCode.getString("Raw_Start");
+				rawEndString = subjectCode.getString("Raw_End");
+				repeatString = subjectCode.getString("Repeat");
+				
 				
 				subjects.createEntryClasses(subjectIDString, subjectStartTimeString,
 						subjectEndTimeString, subjectDayString, subjectCategoryString, 
-						subjectRoomString);
+						subjectRoomString, rawStartString, rawEndString, repeatString);
 			
 
 			}
